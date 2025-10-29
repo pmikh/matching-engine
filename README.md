@@ -22,55 +22,6 @@ price = 250 → 2.50
 
 quantity = 1750 → 17.50
 
-### Architecture
-
-```css
-┌────────────────────────────┐
-│ REST API
-
-(
-Axum
-
-)
-│
-│
-
-/
-orders
-
-(
-POST /PATCH/ DEL
-
-)
-│
-└────────────┬───────────────┘
-│
-▼
-┌─────────────────┐
-│ Matching Engine │
-│
-
-(
-runs async
-
-)
-│
-└─────────────────┘
-│
-▼
-┌─────────────────┐
-│ Broadcast Layer │──► WebSocket clients
-│
-
-(
-Trades, Events
-
-)
-│
-└─────────────────┘
-
-```
-
 ### Configuration
 
 Configuration is loaded via the Settings structure from exchange::configuration::get_configuration.
