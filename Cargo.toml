@@ -1,0 +1,25 @@
+[package]
+name = "exchange"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.11.0"
+tokio = { version = "1.47.1", features = ["full", "macros", "rt-multi-thread"] }
+serde = { version = "1.0.228", features = ["derive"] }
+smart-default = "0.7.1"
+config = "0.15.18"
+uuid = { version = "1.18.1", features = ["serde", "v4"] }
+env_logger = "0.11.8"
+log = "0.4.28"
+slotmap = "1.0.7"
+criterion = { version = "0.7.0", features = ["async"] }
+rand = { version = "0.9.2", features = ["std"] }
+reqwest = "0.12.23"
+tokio-stream = "0.1.17"
+serde_json = "1.0.145"
+actix-ws = "0.3.0"
+
+[[bench]]
+name = "matching_engine"
+harness = false
